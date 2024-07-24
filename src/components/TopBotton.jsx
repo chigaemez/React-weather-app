@@ -1,37 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { cities } from '../Services/Data';
 
 const TopBotton = ({ setQuery }) => {
-    const cities = [
-        {
-            id: 1,
-            name: 'London'
-        },
-        {
-            id: 2,
-            name: 'Sydney'
-        },
-        {
-            id: 3,
-            name: 'Tokyo'
-        },
-        {
-            id: 4,
-            name: 'Paris'
-        },
-        {
-            id: 5,
-            name: 'Toronto'
-        }
-    ]
+
+    const [toggleMenu, setToggleMenu] = useState(false);
+
+    const handleMenuClick = () => {
+        setToggleMenu(!toggleMenu);
+    };
+ 
 
     return (
-        <div className='items-center justify-around flex my-6 '>
+        <div className='items-center  justify-around lg:flex md:flex hidden my-6 '>
             {
                 cities.map((city) => (
-                    <button 
-                    key={city.id} 
-                    className='text-lg font-medium hover:bg-gray-700/20 px-4 py-3 rounded-md transition ease-in'
-                    onClick={() => setQuery({q: city.name})}
+                    <button
+                        key={city.id}
+                        className='text-lg font-medium hover:bg-gray-700/20 lg:px-4 px-2  py-3 rounded-md transition ease-in'
+                        onClick={() => setQuery({ q: city.name })}
                     >{city.name} </button>
                 ))
             }

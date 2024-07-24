@@ -23,12 +23,7 @@ const TempAndDetail = ({ weather: {
  }) => {
 
     const VerticalDetails = [
-        {
-            id: 1,
-            Icon: FaThermometerEmpty,
-            title: "Real Feel",
-            value: `${feel_like}`
-        },
+     
         {
             id: 2,
             Icon: BiSolidDropletHalf,
@@ -44,34 +39,9 @@ const TempAndDetail = ({ weather: {
     ]
 
 
-    const HorizontalDetail = [
-        {
-            id: 1,
-            Icon: GiSunrise,
-            title: "Sunrise",
-            value: sunrise
-        },
-        {
-            id: 2,
-            Icon: GiSunset,
-            title: "Sunset",
-            value: sunset
-        },
-        {
-            id: 3,
-            Icon: MdKeyboardArrowUp,
-            title: "High",
-            value: `${temp_max}`
-        },
-        {
-            id: 4,
-            Icon: MdKeyboardArrowDown,
-            title: "Low",
-            value: `${temp_min}`
-        }
-    ]
+    
     return (
-        <div>
+        <div className='px-3'>
             <div className='flex items-center justify-center py-6 text-xl text-cyan-300 '>
                 <p>{details}</p>
             </div>
@@ -93,17 +63,7 @@ const TempAndDetail = ({ weather: {
                 </div>
             </div>
 
-            <div className='flex flex-row items-center justify-center space-x-10 text-sm py-3'>
-                {
-                    HorizontalDetail.map(({ id, Icon, title, value }) => (
-                        <div key={id} className='flex flex-row items-center'>
-                            <Icon size={30} />
-                            <p className='font-light ml-1'> {`${title}:`} <span className='font-medium ml-1'>{value}</span></p>
-                        </div>
-                    ))
-                }
-
-            </div>
+            
         </div>
     )
 }

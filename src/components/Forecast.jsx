@@ -1,24 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
-const Forecast = ({title, data}) => {
+const Forecast = ({ title, data }) => {
+    const [showForcast, setShowForcast] = useState(false)
     return (
-        <div>
-            <div className='flex items-center justify-start mt-6'>
-                <p className='font-medium uppercase'>{title}</p>
+        <div className='px-3'>
+            <div className='flex items-center justify-between mt-6 cursor-pointer' onClick={() => setShowForcast(!showForcast)}>
+                <p className='font-medium uppercase ' >{title}</p>
+                <>
+                    {showForcast ? <MdKeyboardArrowUp  className='text-3xl font-semibold'/>: <MdKeyboardArrowDown className='text-3xl font-semibold'/>  }
+                </>
             </div>
             <hr className='my-1' />
 
-            <div className=' flex items-center justify-between'>
-                {
-                    data.map((d, index) => (
-                        <div key={index} className='flex flex-col items-center justify-center'>
-                            <p className='font-light text-sm'>{d.title}</p>
-                            <img src={d.icon} alt="Weather icon" className='w-12 my-1' />
-                            <p className='font-medium'>{`${d.temp.toFixed() }°`}</p>
-                        </div>
-                    ))
-                }
-            </div>
+            {
+                showForcast && (
+                    <div className=' flex items-center justify-between '>
+                        {
+                            data.map((d, index) => (
+                                <div key={index} className='flex flex-col items-center justify-center'>
+                                    <p className='font-light text-sm'>{d.title}</p>
+                                    <img src={d.icon} alt="Weather icon" className='w-12 my-1' />
+                                    <p className='font-medium'>{`${d.temp.toFixed()}°`}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                )
+            }
         </div>
     )
 }
