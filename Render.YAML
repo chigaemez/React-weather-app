@@ -1,0 +1,9 @@
+services:
+  - name: frontend
+    env:
+      - key: NODE_ENV
+        value: production
+    buildCommand: yarn add && yarn build
+    startCommand: yarn dev
+    github:
+      branch: main
