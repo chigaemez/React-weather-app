@@ -4,6 +4,6 @@ services:
       - key: NODE_ENV
         value: production
     buildCommand: yarn add && yarn build
-    startCommand: yarn dev
+    startCommand: npx serve -s build -l $PORT
     github:
       branch: main
