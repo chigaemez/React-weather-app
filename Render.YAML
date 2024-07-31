@@ -1,9 +1,9 @@
+# Exported from Render on 2024-07-24T12:59:29Z
 services:
-  - name: frontend
-    env:
-      - key: NODE_ENV
-        value: production
-    buildCommand: yarn add && yarn build
-    startCommand: npx serve -s build -l $PORT
-    github:
-      branch: main
+- type: web
+  name: czar-weather-app
+  runtime: static
+  repo: https://github.com/chigaemez/React-weather-app
+  buildCommand: yarn; yarn build
+  staticPublishPath: dist
+version: "1"

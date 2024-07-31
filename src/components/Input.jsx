@@ -34,7 +34,7 @@ const Input = ({ setQuery, setUnits }) => {
             </div>
             {
                 toggleMenu && (
-                    <div className='flex gap-3 lg:hidden md:hidden flex-col  w-full justify-center my-6  absolute top-3 right-0   bg-opacity-90 backdrop-filter backdrop-blur-sm rounded-md py-4 px-4 bg-gradient-to-br from-cyan-600 to-blue-700'>
+                    <div className='flex gap-3 lg:hidden md:hidden flex-col  w-full justify-center my-6  absolute top-3 right-0   bg-opacity-90 backdrop-filter backdrop-blur-sm rounded-md py-4 px-1 bg-gradient-to-br from-cyan-600 to-blue-700'>
                         <div className='flex flex-row w-full px-2 items-center justify-center space-x-4 '>
                             <input
                                 value={city}
@@ -46,11 +46,7 @@ const Input = ({ setQuery, setUnits }) => {
                             <BiCurrentLocation size={30} onClick={handleLocationClick} className='cursor-pointer transition ease-out hover:scale-125' />
 
                         </div>
-                        <div className='flex flex-row w-1/4 items-center justify-center'>
-                            <button className='text-xl font-medium transition ease-out hover:scale-125' onClick={() => setUnits("metric")}>°C</button>
-                            <p className='text-xl  font-medium mx-1'>|</p>
-                            <button className='text-xl font-medium transition ease-out hover:scale-125' onClick={() => setUnits("imperial")}>°F</button>
-                        </div>
+                       
 
                         <div className='items-center  justify-around flex  my-6 '>
                             {
@@ -85,11 +81,7 @@ const Input = ({ setQuery, setUnits }) => {
                             <BiCurrentLocation size={30} onClick={handleLocationClick} className='cursor-pointer transition ease-out hover:scale-125' />
 
                         </div>
-                        <div className='flex flex-row w-1/4 items-center justify-center'>
-                            <button className='text-xl font-medium transition ease-out hover:scale-125' onClick={() => setUnits("metric")}>°C</button>
-                            <p className='text-xl  font-medium mx-1'>|</p>
-                            <button className='text-xl font-medium transition ease-out hover:scale-125' onClick={() => setUnits("imperial")}>°F</button>
-                        </div>
+                        
                     </div>
 
             

@@ -42,17 +42,17 @@ function App() {
     if (!weather) return 'from-cyan-600 to-blue-700';
     const threshod = units === 'metric' ? 20 : 60;
     if (weather.temp <= threshod) return 'from-cyan-600 to-blue-700'
-    return 'from-yellow-600 to-orange-700';
+    return 'from-[#171e44] to-[#4e4674]';
   }
 
   return (
-    <div className={`mx-auto max-w-screen-lg rounded-lg  lg:mt-4 py-5 lg:px-32   bg-gradient-to-br shadow-xl shadow-gray-400  ${formatBackground()}`}>
-      <TopBotton setQuery={setQuery} />
-      <Input setQuery={setQuery} setUnits={setUnits} weather={weather} />
-
+    <div className={`mx-auto w-[80%] rounded-lg  lg:mt-4 py-5 lg:px-24   bg-gradient-to-br shadow-xl shadow-gray-700  ${formatBackground()}`}>
+      <TopBotton setQuery={setQuery} weather={weather} setUnits={setUnits} units={units} />
+      <Input setQuery={setQuery} setUnits={setUnits} />
       {
         weather && (
           <>
+
             <TimeAndLocation weather={weather} />
             <TempAndDetail weather={weather} units={units} />
             <Forecast title="show 3 HOUR STEP FORECAST" data={weather.hourly} />
